@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Social Bookmarks</string>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.blacktree.Quicksilver.QSDeliciousPlugIn</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -14,8 +14,10 @@
 	<string>Social Bookmarks</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.1.0</string>
 	<key>CFBundleVersion</key>
-	<string>130</string>
+	<string>131</string>
 	<key>NSPrincipalClass</key>
 	<string>QSDeliciousPlugIn</string>
 	<key>QSPlugIn</key>
@@ -27,13 +29,9 @@
 			<string>Web</string>
 		</array>
 		<key>description</key>
-		<string>Provides access to del.icio.us and ma.gnolia bookmarks</string>
-		<key>extendedDescription</key>
-		<string>Provides access to del.icio.us and ma.gnolia bookmarks</string>
+		<string>Provides access to del.icio.us and pinboard.in bookmarks</string>
 		<key>icon</key>
 		<string>del.icio.us</string>
-		<key>requiresFeature</key>
-		<string>0</string>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
@@ -56,7 +54,7 @@
 	<key>QSRequirements</key>
 	<dict>
 		<key>version</key>
-		<string>1328</string>
+		<string>4001</string>
 	</dict>
 	<key>QSResourceAdditions</key>
 	<dict>
