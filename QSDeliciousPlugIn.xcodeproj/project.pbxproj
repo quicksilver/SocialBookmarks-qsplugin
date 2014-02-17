@@ -14,6 +14,7 @@
 		7FB0DC2F0B91FFC600A5B6FF /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB0DC2D0B91FFC500A5B6FF /* QSCore.framework */; };
 		7FB0DC300B91FFC600A5B6FF /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB0DC2E0B91FFC600A5B6FF /* QSFoundation.framework */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
+		D486257618B29CCE00D8CAE4 /* del.icio.us.png in Resources */ = {isa = PBXBuildFile; fileRef = D486257518B29CCE00D8CAE4 /* del.icio.us.png */; };
 		E182BCD306FC8203007BF2C2 /* QSDeliciousPlugIn_Source.h in Resources */ = {isa = PBXBuildFile; fileRef = E182BCCF06FC8203007BF2C2 /* QSDeliciousPlugIn_Source.h */; };
 		E182BCD406FC8203007BF2C2 /* QSDeliciousPlugIn_Source.m in Sources */ = {isa = PBXBuildFile; fileRef = E182BCD006FC8203007BF2C2 /* QSDeliciousPlugIn_Source.m */; };
 		E182BE2506FC9AB5007BF2C2 /* QSDeliciousPrefPane.h in Resources */ = {isa = PBXBuildFile; fileRef = E182BE2206FC9AB5007BF2C2 /* QSDeliciousPrefPane.h */; };
@@ -37,6 +38,7 @@
 		D475F9B218B2992D0012243C /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
 		D475F9B318B2992D0012243C /* Quicksilver.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
 		D475F9B418B2992D0012243C /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D486257518B29CCE00D8CAE4 /* del.icio.us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del.icio.us.png; sourceTree = "<group>"; };
 		DD92D38A0106425D02CA0E72 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		E182BCCF06FC8203007BF2C2 /* QSDeliciousPlugIn_Source.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSDeliciousPlugIn_Source.h; sourceTree = "<group>"; };
 		E182BCD006FC8203007BF2C2 /* QSDeliciousPlugIn_Source.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSDeliciousPlugIn_Source.m; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		0259C582FE90428111CA0C5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D486257518B29CCE00D8CAE4 /* del.icio.us.png */,
 				7FB0DC190B91FF8600A5B6FF /* bookmark_icon.png */,
 				8D1AC9730486D14A00FE50C9 /* Info.plist */,
 				7F9441A00803A9D9007EDC31 /* QSObjectSource.name.strings */,
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E182BCD306FC8203007BF2C2 /* QSDeliciousPlugIn_Source.h in Resources */,
+				D486257618B29CCE00D8CAE4 /* del.icio.us.png in Resources */,
 				E182BE2506FC9AB5007BF2C2 /* QSDeliciousPrefPane.h in Resources */,
 				E182BE3C06FC9B13007BF2C2 /* Localizable.strings in Resources */,
 				7F8AD05107F2503600011548 /* QSDeliciousPlugInSource.nib in Resources */,
