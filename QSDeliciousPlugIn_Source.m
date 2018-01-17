@@ -32,12 +32,13 @@
 }
 
 - (void)populateFields {
-	NSLog(@"populating: %@/%@", [[selection info] objectForKey:@"username"], [[selection info] objectForKey:@"site"]);
+	NSLog(@"populating: %@/%@", [self.selectedEntry.sourceSettings objectForKey:@"username"], [self.selectedEntry.sourceSettings objectForKey:@"site"]);
 }
 
 - (NSView *) settingsView {
-    if (![super settingsView])
-        [NSBundle loadNibNamed:@"QSDeliciousPlugInSource" owner:self];
+	if (![super settingsView]) {
+		[[NSBundle bundleForClass:[self class]] loadNibNamed:@"QSDeliciousPlugInSource" owner:self topLevelObjects:NULL];
+	}
     return [super settingsView];
 }
 
@@ -73,7 +74,7 @@
 										  NULL);
 	
 	if (err == noErr) {
-		NSString *password = [[[NSString alloc] initWithCString:buffer length:length] autorelease];
+		NSString *password = [NSString stringWithUTF8String:buffer];
 		SecKeychainItemFreeContent(NULL,(void *)buffer);
 		return password;
 	}
@@ -143,8 +144,9 @@
 
 // Site Index/API/URL
 
-- (int)siteIndex {
-	return [[selection info] objectForKey:@"site"] != nil ? [[[selection info] objectForKey:@"site"] integerValue] : 0;
+- (NSInteger)siteIndex {
+	NSDictionary *settings = self.selectedEntry.sourceSettings;
+	return [settings objectForKey:@"site"] != nil ? [[settings objectForKey:@"site"] integerValue] : 0;
 }
 
 - (NSString *)siteURLForIndex:(NSInteger)siteIndex {
@@ -185,7 +187,7 @@
 // Useranme
 
 - (NSString *)currentUsername {
-	return [[selection info] objectForKey:@"username"];
+	return [self.selectedEntry.sourceSettings objectForKey:@"username"];
 }
 
 // Password Related
