@@ -61,10 +61,10 @@
 	OSErr			err;
 	
 	err = SecKeychainFindInternetPassword(NULL,
-										  [host length], [host UTF8String],
+										  (UInt32)[host length], [host UTF8String],
 										  0,
 										  NULL,
-										  [user length], [user UTF8String],
+										  (UInt32)[user length], [user UTF8String],
 										  0, NULL,
 										  0,
 										  type,
@@ -112,9 +112,9 @@
 	SecKeychainItemRef existing = NULL;
 	
 	err = SecKeychainFindInternetPassword(NULL,
-										  [host length], [host UTF8String],
+										  (UInt32)[host length], [host UTF8String],
 										  0, NULL,
-										  [user length], [user UTF8String],
+										  (UInt32)[user length], [user UTF8String],
 										  0, NULL,
 										  0,
 										  type,
@@ -123,18 +123,18 @@
 										  &existing);
 	
 	if ( !err ) {
-		err = SecKeychainItemModifyContent( existing, NULL, [pass length], [pass UTF8String] );
+		err = SecKeychainItemModifyContent( existing, NULL, (UInt32)[pass length], [pass UTF8String] );
 		CFRelease( existing );
 	} else {
 		err = SecKeychainAddInternetPassword(NULL,
-                                             [host length], [host UTF8String],
+                                             (UInt32)[host length], [host UTF8String],
                                              0, NULL,
-                                             [user length], [user UTF8String],
+                                             (UInt32)[user length], [user UTF8String],
                                              0, NULL,
                                              0,
                                              type,
                                              0,
-                                             [pass length], [pass UTF8String],
+                                             (UInt32)[pass length], [pass UTF8String],
                                              NULL);
     }
 	
@@ -147,25 +147,25 @@
 	return [[selection info] objectForKey:@"site"] != nil ? [[[selection info] objectForKey:@"site"] integerValue] : 0;
 }
 
-- (NSString *)siteURLForIndex:(int)siteIndex {
+- (NSString *)siteURLForIndex:(NSInteger)siteIndex {
 	if (siteIndex == 0) return @"del.icio.us";
 	else if (siteIndex == 1) return @"ma.gnolia.com";
 	else if (siteIndex == 2) return @"pinboard.in";
 	else return nil;
 }
 
-- (NSString *)reversedSiteURLForIndex:(int)siteIndex {
+- (NSString *)reversedSiteURLForIndex:(NSInteger)siteIndex {
 	if (siteIndex == 0) return @"us.icio.del";
 	else if (siteIndex == 1) return @"com.gnolia.ma";
 	else if (siteIndex == 2) return @"in.pinboard";
 	else return nil;
 }
 
-- (NSString *)tagURLForIndex:(int)siteIndex {
-	return [NSString stringWithFormat:@"%2.%2", [self reversedSiteURLForIndex:[self siteIndex]], @"tag"];
+- (NSString *)tagURLForIndex:(NSInteger)siteIndex {
+	return [NSString stringWithFormat:@"tag.%@", [self reversedSiteURLForIndex:[self siteIndex]]];
 }
 
-- (NSString *)apiURLForIndex:(int)siteIndex {
+- (NSString *)apiURLForIndex:(NSInteger)siteIndex {
 	if (siteIndex == 0) return @"api.del.icio.us/v1";
 	else if (siteIndex == 1) return @"ma.gnolia.com/api/mirrord/v1";
 	else if (siteIndex == 2) return @"api.pinboard.in/v1";
